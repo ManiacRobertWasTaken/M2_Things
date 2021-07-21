@@ -1,0 +1,1 @@
+#define ENABLE_ITEM_BONUS_EVENT
