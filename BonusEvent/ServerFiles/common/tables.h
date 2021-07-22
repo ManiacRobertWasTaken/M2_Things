@@ -14,16 +14,16 @@ enum eventInformations
 
 typedef struct BonusEventStructure
 {
-	uint16_t itemVnum;
-	uint16_t itemReward;
-	uint16_t itemRewardCount;
+	uint16_t itemVnum = 0;
+	uint16_t itemReward = 0;
+	uint16_t itemRewardCount = 0;
 
 } TRewardStructure;
 
 
 typedef struct itemStructure
 {
-	uint16_t itemVnum;
+	uint16_t itemVnum = 0;
 	TPlayerItemAttribute itemAttrs[ITEM_MAX_BONUSES];
 
 } TItemStructure;
