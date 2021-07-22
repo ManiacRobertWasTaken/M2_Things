@@ -206,7 +206,7 @@ void CBonusEvent::RequestValidation(LPITEM pkItem, LPCHARACTER pkChar)
 	auto rewardItem = CBonusEvent::instance().GetItemReward();
 	if (rewardItem && rewardItem == pkItem->GetVnum())
 	{
-		TItemStructure* info{};
+		TItemStructure* info;
 		const bool itemTable = CBonusEvent::instance().GetItemMap(rewardItem, &info);
 		if (itemTable)
 		{
@@ -229,7 +229,7 @@ void CBonusEvent::RequestValidation(LPITEM pkItem, LPCHARACTER pkChar)
 					if (rewardTableItems)
 						pkChar->AutoGiveItem(items->itemReward, items->itemRewardCount);
 				}
-
+				quest::CQuestManager::instance().RequestSetEventFlag("bonusevent.status", 0);
 				pkChar->ChatPacket(CHAT_TYPE_COMMAND, "ClearEventWindow");
 			}
 		}
